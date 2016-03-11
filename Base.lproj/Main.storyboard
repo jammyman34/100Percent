@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1zK-x8-QYh">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--AllCharged-->
+        <scene sceneID="xjG-RN-yU7">
+            <objects>
+                <tableViewController id="XON-8T-xSK" customClass="TableViewController" customModule="_00Percent" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="16R-kH-y72">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="Jli-Ui-3m2">
+                                <cells>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="vsN-tV-Y33" userLabel="BatteryState Cell">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="158"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vsN-tV-Y33" id="Bin-MT-OLV">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="157"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="battery1" translatesAutoresizingMaskIntoConstraints="NO" id="yup-nw-fdR">
+                                                    <rect key="frame" x="137" y="29" width="327" height="99"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="yup-nw-fdR" secondAttribute="height" multiplier="109:33" id="X5P-nF-MZO"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBE-SK-OTN">
+                                                    <rect key="frame" x="8" y="59" width="584" height="39"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="39" id="Dqr-IR-cPk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iBE-SK-OTN" firstAttribute="leading" secondItem="Bin-MT-OLV" secondAttribute="leadingMargin" id="D3i-e3-aD0"/>
+                                                <constraint firstItem="iBE-SK-OTN" firstAttribute="top" secondItem="Bin-MT-OLV" secondAttribute="topMargin" constant="51" id="FiF-7W-3BD"/>
+                                                <constraint firstItem="yup-nw-fdR" firstAttribute="centerX" secondItem="iBE-SK-OTN" secondAttribute="centerX" id="c2f-rP-et7"/>
+                                                <constraint firstItem="yup-nw-fdR" firstAttribute="top" secondItem="Bin-MT-OLV" secondAttribute="topMargin" constant="21" id="l4Z-Xa-tyr"/>
+                                                <constraint firstItem="yup-nw-fdR" firstAttribute="centerY" secondItem="iBE-SK-OTN" secondAttribute="centerY" id="o7i-Qp-eKu"/>
+                                                <constraint firstItem="iBE-SK-OTN" firstAttribute="centerX" secondItem="Bin-MT-OLV" secondAttribute="centerX" id="zJw-1d-vsy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="aXx-JD-s85" userLabel="Empty Cell">
+                                        <rect key="frame" x="0.0" y="222" width="600" height="124"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="aXx-JD-s85" id="Vod-4o-u7v">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="123"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyi-DQ-EzS">
+                                                    <rect key="frame" x="8" y="8" width="584" height="107"/>
+                                                    <string key="text">In order to be alerted when your battery is fully charged you need to set your devices auto-lock to NEVER in the General Settings and leave this app open while charging.</string>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.82970044890000005" green="0.82970044890000005" blue="0.82970044890000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="Nyi-DQ-EzS" firstAttribute="bottom" secondItem="Vod-4o-u7v" secondAttribute="bottomMargin" id="6IX-7j-OPt"/>
+                                                <constraint firstItem="Nyi-DQ-EzS" firstAttribute="trailing" secondItem="Vod-4o-u7v" secondAttribute="trailingMargin" id="Sg6-la-QUA"/>
+                                                <constraint firstItem="Nyi-DQ-EzS" firstAttribute="leading" secondItem="Vod-4o-u7v" secondAttribute="leadingMargin" id="aBa-Nq-M3Z"/>
+                                                <constraint firstItem="Nyi-DQ-EzS" firstAttribute="top" secondItem="Vod-4o-u7v" secondAttribute="topMargin" id="v8w-bT-PJ8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ThJ-vN-r8e" userLabel="Alert Toggle Cell">
+                                        <rect key="frame" x="0.0" y="346" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ThJ-vN-r8e" id="Io3-b6-ZxL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixE-it-xrQ">
+                                                    <rect key="frame" x="546" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="PercentChargedAlertToggle:" destination="XON-8T-xSK" eventType="valueChanged" id="o0m-dn-j0v"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charged Alert" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBk-eq-zgU">
+                                                    <rect key="frame" x="8" y="11" width="107" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dBk-eq-zgU" firstAttribute="leading" secondItem="Io3-b6-ZxL" secondAttribute="leadingMargin" id="7sF-9g-HiN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ixE-it-xrQ" secondAttribute="trailing" constant="-3" id="UHL-yy-Tkm"/>
+                                                <constraint firstItem="ixE-it-xrQ" firstAttribute="top" secondItem="Io3-b6-ZxL" secondAttribute="topMargin" constant="-2" id="c2x-0o-bYi"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dBk-eq-zgU" secondAttribute="bottom" constant="3" id="gVp-WD-1b4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ixE-it-xrQ" secondAttribute="bottom" constant="-2" id="qCH-PD-EL8"/>
+                                                <constraint firstItem="dBk-eq-zgU" firstAttribute="top" secondItem="Io3-b6-ZxL" secondAttribute="topMargin" constant="3" id="wZb-aw-eLg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Del-fb-Md2" userLabel="Tone Selection Cell">
+                                        <rect key="frame" x="0.0" y="390" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Del-fb-Md2" id="A5G-S8-OHm">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charged Alert Tone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEh-8D-zmZ">
+                                                    <rect key="frame" x="8" y="11" width="149" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tone Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-PC-zFL">
+                                                    <rect key="frame" x="471" y="11" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KEh-8D-zmZ" secondAttribute="bottom" constant="3" id="AfT-Yu-bwQ"/>
+                                                <constraint firstItem="LG5-PC-zFL" firstAttribute="top" secondItem="A5G-S8-OHm" secondAttribute="topMargin" constant="3" id="CdM-VB-wuG"/>
+                                                <constraint firstItem="KEh-8D-zmZ" firstAttribute="top" secondItem="A5G-S8-OHm" secondAttribute="topMargin" constant="3" id="K49-nd-GVY"/>
+                                                <constraint firstItem="KEh-8D-zmZ" firstAttribute="leading" secondItem="A5G-S8-OHm" secondAttribute="leadingMargin" id="eFw-ZP-f5U"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LG5-PC-zFL" secondAttribute="bottom" constant="3" id="oaX-JH-Lap"/>
+                                                <constraint firstItem="LG5-PC-zFL" firstAttribute="trailing" secondItem="A5G-S8-OHm" secondAttribute="trailingMargin" id="uLi-IB-cvN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="1000" id="3DX-9q-qTG" userLabel="Empty Cell">
+                                        <rect key="frame" x="0.0" y="434" width="600" height="1000"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="3DX-9q-qTG" id="TSM-q0-F6f">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="999"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="XON-8T-xSK" id="ISr-RG-7nJ"/>
+                            <outlet property="delegate" destination="XON-8T-xSK" id="NL4-yE-FOA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="AllCharged" id="T3x-97-XeV"/>
+                    <connections>
+                        <outlet property="AlerToneCell" destination="Del-fb-Md2" id="ESW-Rj-PDe"/>
+                        <outlet property="AlertToneNameLabel" destination="LG5-PC-zFL" id="A04-Ly-94N"/>
+                        <outlet property="BatteryLevelLabel" destination="iBE-SK-OTN" id="uQP-bG-l8b"/>
+                        <outlet property="ChargeAlertCell" destination="ThJ-vN-r8e" id="TuB-28-YFa"/>
+                        <outlet property="PercentChargedAlertToggle" destination="ixE-it-xrQ" id="YyO-S1-d0X"/>
+                        <outlet property="batteryImage" destination="yup-nw-fdR" id="dAv-50-ibq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwm-hp-ZJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284" y="-31"/>
+        </scene>
+        <!--100Percent-->
+        <scene sceneID="uQL-rp-1et">
+            <objects>
+                <navigationController title="100Percent" automaticallyAdjustsScrollViewInsets="NO" id="1zK-x8-QYh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dlU-DW-ivH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XON-8T-xSK" kind="relationship" relationship="rootViewController" id="Hvc-XX-qi2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYe-rr-p6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1052" y="-31"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="battery1" width="268" height="98"/>
+    </resources>
+</document>
