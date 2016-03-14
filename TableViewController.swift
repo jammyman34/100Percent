@@ -27,9 +27,24 @@ class TableViewController: UITableViewController {
     @IBOutlet var AlertToneNameLabel: UILabel!
     @IBOutlet var batteryImage: UIImageView!
     
+    var audioPlayer: AVAudioPlayer! // Global variable
+    
+    func playChargedTone() {
+        do {
+            self.audioPlayer =  try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("lmTheme", ofType: "mp3")!))
+            self.audioPlayer.play()
+            
+        } catch {
+            let noSoundFound = UIAlertController(title: "No Sound File Found", message: "Your battery is 100% charged, but no audio file was found.", preferredStyle: UIAlertControllerStyle.Alert)
+            noSoundFound.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in }))
+
+            print("No audio file found")
+        }
+    }
+    
     // Grab the sounds path
-    var chargedTone = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("lmTheme", ofType: "mp3")!)
-    var audioPlayer = AVAudioPlayer()
+//    var chargedTone = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("lmTheme", ofType: "mp3")!)
+//    var audioPlayer = AVAudioPlayer()
     
     
     // function to return the devices battery level
@@ -361,15 +376,14 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // tells the app not to allow the phone to auto-sleep when app is open
+        UIApplication.sharedApplication().idleTimerDisabled = true
     
         // sets the title bar color and title text color
         let myColor = UIColor(red:0.32, green:0.83, blue:0.41, alpha:1)
         navigationController!.navigationBar.barTintColor = myColor
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-        // sets up the audio stuff
-        audioPlayer = try AVAudioPlayer(contentsOfURL: chargedTone)
-        audioPlayer.prepareToPlay()
         
         // hides tone cell until I can figure out how to allow users to pick their own alert tones
         AlerToneCell.hidden = true
@@ -379,10 +393,10 @@ class TableViewController: UITableViewController {
         UIDevice.currentDevice().batteryMonitoringEnabled = true
         
         // enbales tracking of battery state changes (not used in this app as of yet)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "batteryStateDidChange:", name: UIDeviceBatteryStateDidChangeNotification, object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("batteryStateDidChange:"), name: UIDeviceBatteryStateDidChangeNotification, object: nil)
         
         // enables tracking of battery level changes
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "batteryLevelDidChange:", name: UIDeviceBatteryLevelDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TableViewController.batteryLevelDidChange(_:)), name: UIDeviceBatteryLevelDidChangeNotification, object: nil)
         
         
         // shows the battery level on the main percentage label let y = Int(floor(f))
@@ -411,10 +425,10 @@ class TableViewController: UITableViewController {
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             
             // Plays my special audio when 100% charged
-            audioPlayer.play()
+            //audioPlayer.play() // original play code
+            playChargedTone()
             
             let chargedAlert = UIAlertController(title: "Battery Charged", message: "Your battery is 100% charged. Unplug your device so you don't over charge the battery and decrease its life.", preferredStyle: UIAlertControllerStyle.Alert)
-            
             chargedAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
                 // put code here that will stop the audio from playing
                 self.audioPlayer.stop()

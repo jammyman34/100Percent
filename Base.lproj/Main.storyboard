@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1zK-x8-QYh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10115" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1zK-x8-QYh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--AllCharged-->
+        <!--ALLCharged-->
         <scene sceneID="xjG-RN-yU7">
             <objects>
                 <tableViewController id="XON-8T-xSK" customClass="TableViewController" customModule="_00Percent" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyi-DQ-EzS">
                                                     <rect key="frame" x="8" y="8" width="584" height="107"/>
-                                                    <string key="text">In order to be alerted when your battery is fully charged you need to set your devices auto-lock to NEVER in the General Settings and leave this app open while charging.</string>
+                                                    <string key="text">In order to be alerted when your battery is fully charged you'll need to leave ALLCharged running and don't put your phone to sleep.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tone Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-PC-zFL">
-                                                    <rect key="frame" x="471" y="11" width="88" height="21"/>
+                                                    <rect key="frame" x="472" y="11" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                             <outlet property="delegate" destination="XON-8T-xSK" id="NL4-yE-FOA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="AllCharged" id="T3x-97-XeV"/>
+                    <navigationItem key="navigationItem" title="ALLCharged" id="T3x-97-XeV"/>
                     <connections>
                         <outlet property="AlerToneCell" destination="Del-fb-Md2" id="ESW-Rj-PDe"/>
                         <outlet property="AlertToneNameLabel" destination="LG5-PC-zFL" id="A04-Ly-94N"/>
