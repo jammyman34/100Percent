@@ -18,8 +18,18 @@ class TableViewController: UITableViewController {
     @IBAction func PercentChargedAlertToggle(sender: AnyObject) {
         if PercentChargedAlertToggle.on{
             //AlerToneCell.hidden = false
+            
         }else{
             //AlerToneCell.hidden = true
+            
+            let notBuiltYetAlert = UIAlertController(title: "Not Built Yet", message: "Sorry, this feature hasn't been built yet.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            notBuiltYetAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+                // sets the toggle back to ON
+                self.PercentChargedAlertToggle.setOn(true, animated: true)
+            }))
+            
+            presentViewController(notBuiltYetAlert, animated: true, completion: nil)
         }
         
     }
@@ -403,6 +413,7 @@ class TableViewController: UITableViewController {
         let batteryLevelInt = Int(floor(batteryLevel() * 100))
         BatteryLevelLabel.text = "\(batteryLevelInt)%"
         print("Device Battery Level is: \(batteryLevelInt) and the state is \(batteryState())")
+        
    
     }
 
@@ -450,6 +461,24 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 3{
+            let notBuiltYetAlert = UIAlertController(title: "Not Built Yet", message: "Sorry, this feature hasn't been built yet.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            notBuiltYetAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+                print("Handle Ok logic here")
+            }))
+            
+            presentViewController(notBuiltYetAlert, animated: true, completion: nil)
+            
+            // deselcts the row that was tapped
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: false)
+            
+            print("row tapped \(indexPath.row)")
+        }
+    }
+    
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 //        // #warning Potentially incomplete method implementation.
@@ -462,12 +491,13 @@ class TableViewController: UITableViewController {
 //        // Return the number of rows in the section.
 //        return 0
 //    }
+    
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
+        cell setLayoutMargins:UIEdgeInsetsZero
 
         return cell
     }
