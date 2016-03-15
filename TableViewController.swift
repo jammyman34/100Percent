@@ -386,8 +386,8 @@ class TableViewController: UITableViewController {
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         // hides tone cell until I can figure out how to allow users to pick their own alert tones
-        AlerToneCell.hidden = true
-        ChargeAlertCell.hidden = true
+        AlerToneCell.hidden = false
+        ChargeAlertCell.hidden = false
         
         // enables the tracking of the devices battery
         UIDevice.currentDevice().batteryMonitoringEnabled = true
